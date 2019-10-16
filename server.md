@@ -31,14 +31,15 @@
 
 ### 版本记录
 
-| 版本号 |  修订时间  | 修订说明                  |
-| :----: | :--------: | ------------------------- |
-|  v0.1  | 2019/10/15 | 开始编写手册              |
-|  v0.2  | 2019/10/15 | 添加维护 Linux 服务器章节 |
+| 版本号 |  修订时间  | 修订说明                    |
+| :----: | :--------: | --------------------------- |
+|  v0.1  | 2019/10/15 | 开始编写手册                |
+|  v0.2  | 2019/10/15 | 添加维护 Linux 服务器章节   |
+|  v0.3  | 2019/10/16 | 添加配置 Windows 服务器章节 |
 
 ## 维护 Linux 服务器
 
-<img src="files/linux.svg"  />
+![linux](files/linux.svg)
 
 阀厅项目服务器使用的是 Linux 系统，我们通过 _终端 (Terminal)_ 来和他进行交互。
 在 Linux 系统上可以通过按 **Ctrl+Alt+T** 快捷键打开终端。
@@ -132,7 +133,7 @@ $ date -d @1569895200 +%F\ %T
 
 #### 更多
 
--   可以打开多个 `终端`  来进行不同的操作。
+-   可以打开多个 `终端` 来进行不同的操作。
 
 -   使用 `history` 命令查看历史记录，输入 `!n`（`n` 是命令编号）就可以再次执行。
 
@@ -244,9 +245,61 @@ scp hs@192.168.8.2:/var/www/media/log/server.log ./
 
 #### 下载到本地后编辑
 
-通过 '上传下载文件' 所述方法下载配置文件到本地，编辑后上传到服务器。
+通过 [上传下载文件](#上传下载文件) 所述方法下载配置文件到本地，编辑后上传到服务器。
 本地编辑时请注意保持换行符为 `LF` 。
 
 <img src="files/vscode.png" width="80" />
 
 推荐使用 [:link: Visual Studio Code](https://code.visualstudio.com) 进行本地编辑。
+
+## 配置 Windows 服务器
+
+### 配置流程
+
+_请严格按配置流程操作，任何遗漏都将引发不可预期的后果。_
+
+_Please strictly follow the configuration process, any of your omissions will lead to unexpected consequences._
+
+1. 请在 `Windows 7` 或更高版本的操作系统上操作。
+
+1. 在 `Windows 10` 操作系统上部署本系统服务端时需激活并切换至 `administrator` 用户。
+
+    > _以 **管理员身份** 运行命令 `net user administrator /active:yes`_ 。
+
+1. 配置 `用户账户控制(UAC)` 为 `从不通知` 。
+
+1. 安装 `支持组件(support.exe)` 到 `d:\etc` 目录(默认安装)。
+
+1. 将 `安装包` 解压到 `d` 盘任意位置。
+
+1. 以 **管理员身份** 运行 `setup.bat` 执行安装操作。
+
+1. 在 `支持组件` 中切换版本为 `"php-5.5.38 + Apache"` ，设置运行模式为 `"系统服务"` 。
+
+    ![support](files/support.png)
+
+1. 在 `Internet Explore` 浏览器中输入地址 [`http://localhost`](http://localhost) 打开客户端网页。
+
+### 配置说明
+
+-   本系统服务端可部署至任意磁盘分区，但需与支持组件位于同一磁盘分区。
+
+-   如安装过程中提示缺少组件，请安装 `运行库` 后再次尝试。
+
+-   请安装 `navicat`、`winrar` 等常用软件。
+
+### 下载地址
+
+为保障系统安全，以下文件仅支持在公司内网下载。
+
+-   安装包 :link: http://server.haithing.com/ois/windows/
+
+-   支持组件 :link: http://server.haithing.com/ois/windows/support/support.exe
+
+-   32 位运行库 :link: http://server.haithing.com/ois/windows/support/runtime_x86.exe
+
+-   64 位运行库 :link: http://server.haithing.com/ois/windows/support/runtime_x64.exe
+
+-   navicat :link: http://server.haithing.com/ois/windows/support/navicat.zip
+
+-   winrar :link: http://server.haithing.com/ois/windows/support/winrar.exe
