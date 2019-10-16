@@ -1,6 +1,9 @@
 # 在线监测系统维护手册 服务器
 
-![stars](https://img.shields.io/github/stars/haithing/manual?style=social) ![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
+![stars](https://img.shields.io/github/stars/haithing/manual?style=social)
+![watchers](https://img.shields.io/github/watchers/haithing/manual?style=social)
+![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
+![file size](https://img.shields.io/github/repo-size/haithing/manual?style=social)
 
 ## 前言
 
@@ -12,30 +15,30 @@
 
 -   本手册在不断的充实完善，建议关注后在线查阅。你的支持也是我们进步的动力。
 
--   https://github.com/haithing/manual
+-   :link: https://github.com/haithing/manual
 
 ### 反馈建议 ![issues](https://img.shields.io/github/issues/haithing/manual)
 
 -   如果你在本手册中发现了错误或者存在可以改善的地方，请贡献你的一份力量。
 
--   https://github.com/haithing/manual/issues
+-   :link: https://github.com/haithing/manual/issues
 
 ### 下载手册 ![downloads](https://img.shields.io/github/downloads/haithing/manual/total)
 
 -   本手册提供了 pdf 、 word 等多种版本供下载后查阅，请随时关注更新并获取最新的版本。
 
--   https://github.com/haithing/manual/releases/latest
+-   :link: https://github.com/haithing/manual/releases/latest
 
 ### 版本记录
 
-| 版本号 | 修订时间   | 修订说明                  |
-| ------ | ---------- | ------------------------- |
-| v0.1   | 2019/10/15 | 开始编写手册              |
-| v0.2   | 2019/10/15 | 添加维护 linux 服务器章节 |
+| 版本号 |  修订时间  | 修订说明                  |
+| :----: | :--------: | ------------------------- |
+|  v0.1  | 2019/10/15 | 开始编写手册              |
+|  v0.2  | 2019/10/15 | 添加维护 linux 服务器章节 |
 
 ## 维护 linux 服务器
 
-阀厅项目服务器使用的是 linux 系统，我们使用 _终端 (Terminal)_ 来对它进行管理，常用的终端有 xshell 、 git 、 putty 等。
+阀厅项目服务器使用的是 linux 系统，我们通过 _终端 (Terminal)_ 来和他进行交互，常用的终端有 xshell 、 git 、 putty 等。
 
 本章节将介绍终端的基本使用，下文中 `终端` 泛指上述软件中的任意一个。
 
@@ -45,7 +48,7 @@
 
 <img src="files/xshell.png" width="80" />
 
--   http://server.haithing.com/ois/windows/support/xshell.exe `(内网)`
+-   :link: http://server.haithing.com/ois/windows/support/xshell.exe `(内网)`
 
 -   xshell 是收费软件，需注意试用期问题。
 
@@ -55,7 +58,7 @@
 
 <img src="files/git.png" width="80" />
 
--   https://www.git-scm.com/download/
+-   :link: https://www.git-scm.com/download
 
 -   安装后在桌面点右键，选择 `Git Bash Here` 打开软件。
 
