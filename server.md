@@ -205,4 +205,9 @@ scp hs@192.168.8.2:/var/www/media/log/server.log ./
 
 #### 下载到本地后编辑
 
-通过上文所述方式下载配置文件到本地，编辑后上传到服务器。本地编辑时推荐使用 `VSCode` 、 `Sublime` 、 `Notepad++` 等编辑器。
+通过 '上传下载文件' 所述方法下载配置文件到本地，编辑后上传到服务器。
+本地编辑时请注意保持换行符为 `LF` 。
+
+<img src="files/vscode.png" width="80" />
+
+推荐使用 [:link: Visual Studio Code](https://code.visualstudio.com) 进行本地编辑。
