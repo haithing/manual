@@ -43,7 +43,7 @@
 
 #### xshell
 
-<img src="files/xshell.png" width="64" />
+<img src="files/xshell.png" width="80" />
 
 -   http://server.haithing.com/ois/windows/support/xshell.exe `(内网)`
 
@@ -53,7 +53,7 @@
 
 #### git
 
-<img src="files/git.jpg" width="64" />
+<img src="files/git.png" width="80" />
 
 -   https://www.git-scm.com/download/
 
@@ -65,7 +65,7 @@
 
 #### 自动补全
 
-按 **Tab** 键实现自动补全参数。自动补全不仅能有效提高输入效率，还可以 _避免输入错误_ 。
+按 **Tab** 键实现自动补全参数。自动补全不仅能有效提高输入效率，还可以 _避免输入错误_ :100: 。
 
 **示例（ `→` 表示 **Tab** 键）**
 
