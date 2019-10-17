@@ -4,11 +4,7 @@
 ![watchers](https://img.shields.io/github/watchers/haithing/manual?style=social)
 ![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
 ![file size](https://img.shields.io/github/repo-size/haithing/manual?style=social)
-
-<style>
-a { text-decoration: none; }
-h1, h2 { text-align: center; }
-</style>
+![license](https://img.shields.io/github/license/haithing/manual?style=social)
 
 ## 前言
 
@@ -20,7 +16,7 @@ _具体_（给出具体的最常用的例子），
 _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细枝末节）。
 熟练的掌握本手册所述内容能帮助你节约大量的时间。
 
-本手册采用 Markdown 编制，托管于 Github 。
+本手册使用 MIT 开源协议，欢迎大家贡献自己的内容 。
 
 ### 在线查阅 ![release date](https://img.shields.io/github/release-date/haithing/manual)
 
