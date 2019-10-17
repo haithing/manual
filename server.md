@@ -1,15 +1,26 @@
-# 在线监测系统维护手册 服务器
+# 在线监测系统服务器运维手册
 
 ![stars](https://img.shields.io/github/stars/haithing/manual?style=social)
 ![watchers](https://img.shields.io/github/watchers/haithing/manual?style=social)
 ![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
 ![file size](https://img.shields.io/github/repo-size/haithing/manual?style=social)
 
+<style>
+a { text-decoration: none; }
+h1, h2 { text-align: center; }
+</style>
+
 ## 前言
 
-本手册采用 Markdown 编制，托管于 Github 。
-本手册致力于做到 _覆盖面广_（涉及所有重要的内容），_具体_（给出具体的最常用的例子），以及 _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细枝末节）。
+本手册供我司在线监测系统服务器运维人员使用。
+
+本手册致力于做到
+_覆盖面广_（涉及所有重要的内容），
+_具体_（给出具体的最常用的例子），
+_简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细枝末节）。
 熟练的掌握本手册所述内容能帮助你节约大量的时间。
+
+本手册采用 Markdown 编制，托管于 Github 。
 
 ### 在线查阅 ![release date](https://img.shields.io/github/release-date/haithing/manual)
 
@@ -37,15 +48,20 @@
 |  v0.2  | 2019/10/15 | 添加维护 Linux 服务器章节   |
 |  v0.3  | 2019/10/16 | 添加配置 Windows 服务器章节 |
 
+## 配置 Linux 服务器
+
+<img src="files/ubuntu.svg" width="80" />
+
+我司项目服务端选用 Ubuntu 16.04 LTS 发行版。
+本手册所述流程及所列示例均基于此发行版。
+
 ## 维护 Linux 服务器
 
-![linux](files/linux.svg)
-
-阀厅项目服务器使用的是 Linux 系统，我们通过 _终端 (Terminal)_ 来和他进行交互。
+我们通过 **终端 (Terminal)** 来和装载 Linux 系统的服务器进行交互。
 在 Linux 系统上可以通过按 **Ctrl+Alt+T** 快捷键打开终端。
 在 Windows 系统上我们需要安装终端软件，常用的终端软件有 xshell 、 git 、 putty 等。
 
-本章节将介绍终端的基本使用，下文中 `终端` 泛指上述软件中的任意一个。
+本章节将介绍终端的基本使用，下文中 **终端** 泛指上述软件中的任意一个。
 
 ### 常用终端
 
@@ -73,7 +89,8 @@
 
 #### 自动补全
 
-按 **Tab** 键实现自动补全参数。自动补全不仅能有效提高输入效率，还可以 _避免输入错误_ :100: 。
+按 **Tab** 键实现自动补全参数。
+自动补全不仅能有效提高输入效率，还可以 _避免输入错误_ :100: 。
 
 请参阅以下示例（ `→` 表示 **Tab** 键）练习。
 
@@ -133,7 +150,7 @@ $ date -d @1569895200 +%F\ %T
 
 #### 更多
 
--   可以打开多个 `终端` 来进行不同的操作。
+-   可以打开多个 **终端** 来进行不同的操作。
 
 -   使用 `history` 命令查看历史记录，输入 `!n`（`n` 是命令编号）就可以再次执行。
 
@@ -149,13 +166,13 @@ $ date -d @1569895200 +%F\ %T
 
 > 请勿在 xshell 中保存服务器密码。
 
-打开 `终端` ，输入命令 `ssh 用户名@服务器`（如 `ssh hs@192.168.8.2`），回车，输入密码，出现 `Welcome to XXX` 信息即已成功连接服务器。
+打开 **终端** ，输入命令 `ssh 用户名@服务器`（如 `ssh hs@192.168.8.2`），回车，输入密码，出现 `Welcome to XXX` 信息即已成功连接服务器。
 
 -   服务器 ip 地址与客户端网页地址一致，阀厅项目通常为 `192.168.8.2` 。
 
 -   用户名通常为 `hs` 。
 
--   在 `终端` 输入密码时无任何反馈，且输入错误无法删除。
+-   在 **终端** 输入密码时无任何反馈，且输入错误无法删除。
 
 ### 目录操作
 
@@ -195,7 +212,7 @@ $ cd ../../media/report && pwd
 
 #### scp
 
-打开 `终端` （无需连接到服务器），输入如下命令：
+打开 **终端** （无需连接到服务器），输入如下命令：
 
 ```bash
 scp [源主机]:[源文件] [目标主机]:[目标路径]
@@ -209,19 +226,19 @@ scp default.php hs@192.168.8.2:/var/www/media/report
 scp hs@192.168.8.2:/var/www/media/log/server.log ./
 ```
 
-#### lrzsz
+#### zmodem (lrzsz)
 
-使用 lrzsz 前需通过 xshell 连接到服务器。
+使用 zmodem 前需通过 xshell 连接到服务器。
 
-**sz**
+-   **`rz` 命令** 即 _receive_ ，服务器接收，客户机上传。
 
--   将选定的文件下载到本地。
+    -   运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器。
 
-**rz**
+    -   如果服务器上存在同名文件，需先删除。
 
--   运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器。
+-   **`sz` 命令** 即 _send_ ，服务器发送，客户机下载。
 
--   如果服务器上存在同名文件，需先删除。
+    -   将选定的文件下载到本地。
 
 ### 编辑配置文件
 
@@ -303,3 +320,11 @@ _Please strictly follow the configuration process, any of your omissions will le
 -   navicat :link: http://server.haithing.com/ois/windows/support/navicat.zip
 
 -   winrar :link: http://server.haithing.com/ois/windows/support/winrar.exe
+
+## 维护 Windows 服务器
+
+## 数据库配置
+
+## 故障处理
+
+## 附录
