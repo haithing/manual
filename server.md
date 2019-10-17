@@ -55,27 +55,27 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 
 我们通过 **终端 (Terminal)** 来和装载 Linux 系统的服务器进行交互。
 在 Linux 系统上可以通过按 **Ctrl+Alt+T** 快捷键打开终端。
-在 Windows 系统上我们需要安装终端软件，常用的终端软件有 xshell 、 git 、 putty 等。
+在 Windows 系统上我们需要安装终端软件，常用的终端软件有 Xshell 、 Git 、 PuTTY 等。
 
 本章节将介绍终端的基本使用，下文中 **终端** 泛指上述软件中的任意一个。
 
 ### 常用终端
 
-#### xshell
+**_Xshell_**
 
 <img src="files/xshell.png" width="80" />
 
--   :link: http://server.haithing.com/ois/windows/support/xshell.exe `(内网)`
+-   请在 [附录 - 常用软件](#xshell) 获取下载链接。
 
--   xshell 是收费软件，需注意试用期问题。
+-   Xshell 是收费软件，需注意试用期问题。
 
 -   安装后通过桌面快捷方式打开软件。
 
-#### git
+**_Git_**
 
 <img src="files/git.png" width="80" />
 
--   :link: https://www.git-scm.com/download
+-   请在 [附录 - 常用软件](#git) 获取下载链接。
 
 -   安装后在桌面点右键，选择 `Git Bash Here` 打开软件。
 
@@ -206,7 +206,7 @@ $ cd ../../media/report && pwd
 
 ### 上传下载文件
 
-#### scp
+#### _scp_
 
 打开 **终端** （无需连接到服务器），输入如下命令：
 
@@ -222,7 +222,7 @@ scp default.php hs@192.168.8.2:/var/www/media/report
 scp hs@192.168.8.2:/var/www/media/log/server.log ./
 ```
 
-#### zmodem (lrzsz)
+#### _zmodem (lrzsz)_
 
 使用 zmodem 前需通过 xshell 连接到服务器。
 
@@ -263,59 +263,51 @@ scp hs@192.168.8.2:/var/www/media/log/server.log ./
 
 <img src="files/vscode.png" width="80" />
 
-推荐使用 [:link: Visual Studio Code](https://code.visualstudio.com) 进行本地编辑。
+推荐使用 [Visual Studio Code](#visual-studio-code) 进行本地编辑。
 
 ## 配置 Windows 服务器
-
-### 配置流程
 
 _请严格按配置流程操作，任何遗漏都将引发不可预期的后果。_
 
 _Please strictly follow the configuration process, any of your omissions will lead to unexpected consequences._
 
-1. 请在 `Windows 7` 或更高版本的操作系统上操作。
+### 配置流程
 
-1. 在 `Windows 10` 操作系统上部署本系统服务端时需激活并切换至 `administrator` 用户。
+1.  请在 Windows 7 或更高版本的操作系统上操作。
+
+1.  在 Windows 10 操作系统上部署本系统服务端时需激活并切换至 **_administrator_** 用户。
 
     > _以 **管理员身份** 运行命令 `net user administrator /active:yes`_ 。
 
-1. 配置 `用户账户控制(UAC)` 为 `从不通知` 。
+1.  配置 _用户账户控制(UAC)_ 为 `从不通知` 。
 
-1. 安装 `支持组件(support.exe)` 到 `d:\etc` 目录(默认安装)。
+1.  安装 _支持组件(support.exe)_ 到 **_d:\etc_** 目录(默认安装)。
 
-1. 将 `安装包` 解压到 `d` 盘任意位置。
+    > http://server.haithing.com/ois/windows/support/support.exe
 
-1. 以 **管理员身份** 运行 `setup.bat` 执行安装操作。
+1.  获取 _安装包_ 并解压至 **_d_** 盘任意位置。
 
-1. 在 `支持组件` 中切换版本为 `"php-5.5.38 + Apache"` ，设置运行模式为 `"系统服务"` 。
+    > http://server.haithing.com/ois/windows/
+
+1.  以 **管理员身份** 运行 **_setup.bat_** 执行安装操作。
+
+1.  在 _支持组件_ 中切换版本为 `"php-5.5.38 + Apache"` ，设置运行模式为 `"系统服务"` 。
 
     ![support](files/support.png)
 
-1. 在 `Internet Explore` 浏览器中输入地址 [`http://localhost`](http://localhost) 打开客户端网页。
+1.  在 **Internet Explore 11** 浏览器中输入地址 [`http://localhost`](http://localhost) 打开客户端网页。
 
 ### 配置说明
 
 -   本系统服务端可部署至任意磁盘分区，但需与支持组件位于同一磁盘分区。
 
--   如安装过程中提示缺少组件，请安装 `运行库` 后再次尝试。
+-   如安装过程中提示缺少组件，请安装 _运行库_ 后再次尝试。
 
--   请安装 `navicat`、`winrar` 等常用软件。
+    -   32 位 :link: http://server.haithing.com/ois/windows/support/runtime_x86.exe
 
-### 下载地址
+    -   64 位 :link: http://server.haithing.com/ois/windows/support/runtime_x64.exe
 
-为保障系统安全，以下文件仅支持在公司内网下载。
-
--   安装包 :link: http://server.haithing.com/ois/windows/
-
--   支持组件 :link: http://server.haithing.com/ois/windows/support/support.exe
-
--   32 位运行库 :link: http://server.haithing.com/ois/windows/support/runtime_x86.exe
-
--   64 位运行库 :link: http://server.haithing.com/ois/windows/support/runtime_x64.exe
-
--   navicat :link: http://server.haithing.com/ois/windows/support/navicat.zip
-
--   winrar :link: http://server.haithing.com/ois/windows/support/winrar.exe
+-   请安装 [常用软件](#常用软件) 。
 
 ## 维护 Windows 服务器
 
@@ -324,3 +316,27 @@ _Please strictly follow the configuration process, any of your omissions will le
 ## 故障处理
 
 ## 附录
+
+### 常用软件
+
+#### _Git_
+
+> https://www.git-scm.com/download
+
+#### _Visual Studio Code_
+
+> https://code.visualstudio.com/download
+
+**_以下软件仅支持在公司内网下载。_**
+
+#### _Xshell_
+
+> http://server.haithing.com/ois/windows/support/xshell.exe
+
+#### _Navicat_
+
+> http://server.haithing.com/ois/windows/support/navicat.zip
+
+#### _WinRAR_
+
+> http://server.haithing.com/ois/windows/support/winrar.exe
