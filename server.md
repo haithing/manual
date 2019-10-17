@@ -41,17 +41,15 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 | 版本号 |  修订时间  | 修订说明                    |
 | :----: | :--------: | --------------------------- |
 |  v0.1  | 2019/10/15 | 开始编写手册                |
-|  v0.2  | 2019/10/15 | 添加维护 Linux 服务器章节   |
-|  v0.3  | 2019/10/16 | 添加配置 Windows 服务器章节 |
+|  v0.2  | 2019/10/15 | 添加 Linux 服务器运维章节   |
+|  v0.3  | 2019/10/16 | 添加 Windows 服务器运维章节 |
 
-## 配置 Linux 服务器
+## Linux 服务器运维
 
 <img src="files/ubuntu.svg" width="80" />
 
 我司项目服务端选用 Ubuntu 16.04 LTS 发行版。
 本手册所述流程及所列示例均基于此发行版。
-
-## 维护 Linux 服务器
 
 本章节基于 _理论够用、侧重实用_ 的原则来说明 Linux 服务器的基本运维操作。
 
@@ -268,13 +266,17 @@ $ date -d @1569895200 +%F\ %T
 
 -   使用 `df -h` 命令查看硬盘的使用。
 
-## 配置 Windows 服务器
+## Windows 服务器运维
+
+部分项目未单独配置服务器，这些项目中客户端也作为服务器使用。
+
+### 配置
+
+#### 配置流程
 
 _请严格按配置流程操作，任何遗漏都将引发不可预期的后果。_
 
 _Please strictly follow the configuration process, any of your omissions will lead to unexpected consequences._
-
-### 配置流程
 
 1.  请在 Windows 7 或更高版本的操作系统上操作。
 
@@ -284,7 +286,7 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 1.  配置 _用户账户控制(UAC)_ 为 `从不通知` 。
 
-1.  安装 _支持组件(support.exe)_ 到 **_d:\etc_** 目录(默认安装)。
+1.  安装 _支持组件(support.exe)_ 到 **_d:\etc_** 目录。
 
     > http://server.haithing.com/ois/windows/support/support.exe
 
@@ -300,19 +302,17 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 1.  在 **Internet Explore 11** 浏览器中输入地址 [`http://localhost`](http://localhost) 打开客户端网页。
 
-### 配置说明
+#### 配置说明
 
--   本系统服务端可部署至任意磁盘分区，但需与支持组件位于同一磁盘分区。
+-   服务程序可部署至任意磁盘分区，但需与支持组件位于同一磁盘分区。
 
 -   如安装过程中提示缺少组件，请安装 _运行库_ 后再次尝试。
 
-    -   32 位 :link: http://server.haithing.com/ois/windows/support/runtime_x86.exe
+    > 32 位 http://server.haithing.com/ois/windows/support/runtime_x86.exe
 
-    -   64 位 :link: http://server.haithing.com/ois/windows/support/runtime_x64.exe
+    > 64 位 http://server.haithing.com/ois/windows/support/runtime_x64.exe
 
 -   请安装 [常用软件](#常用软件) 。
-
-## 维护 Windows 服务器
 
 ## 数据库配置
 
