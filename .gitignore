@@ -1,5 +1,7 @@
 *.doc
 *.docx
+*.htm
+*.html
 *.pdf
 
 Thumbs.*
