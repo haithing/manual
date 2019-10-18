@@ -316,33 +316,33 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 ## 数据库配置
 
-## 疑问解答与故障处理
+## 常见问题 (FAQ)
 
-### 界面
+### 通用 (General)
 
-#### :question: 设置界面标题与 logo
+#### :question: 有技术问题怎么办
 
--   疑问
+1. 建议您在提问前，大致阅读一下操作手册，了解系统相关功能。
 
-客户要求修改界面标题与 logo ，该如何操作呢？
+1. 查看本章节常见问题的解答。
 
--   解答
+1. 在 [issues](https://github.com/haithing/manual/issues) 上提问并附上详细说明。
+
+### 界面 (User Interface)
+
+#### :question: 怎么修改界面标题与 logo 等信息
 
 点击界面右上角 [选项] 按钮，
 在弹出菜单中点击 [系统配置] 按钮，
 输入系统配置密码，
-修改标题、副标题、 logo 等项目，
+修改标题、副标题、 logo 等信息，
 点击 [保存] 按钮完成配置。
 
-### 报表
+### 报表 (Report)
 
-#### :question: 报表无法下载
+#### :question: 无法下载报表怎么办
 
--   故障
-
-在 [巡航报表] 界面点击下载报表没有反应，或下载后文件名类似 `2019-10-01_xls` 且无法打开。
-
--   处理
+> 在 [巡航报表] 界面点击下载报表没有反应，或下载后文件名类似 `2019-10-01_xls` 且无法打开。
 
 此为操作系统 bug ，暂无法解决。
 系统重启后可恢复。
