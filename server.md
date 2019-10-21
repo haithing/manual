@@ -1,16 +1,16 @@
 # 在线监测系统服务器运维手册
 
-![stars](https://img.shields.io/github/stars/haithing/manual?style=social)
-![watchers](https://img.shields.io/github/watchers/haithing/manual?style=social)
-![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
-![file size](https://img.shields.io/github/repo-size/haithing/manual?style=social)
-![license](https://img.shields.io/github/license/haithing/manual?style=social)
-
 ## 目录
 
 [TOC]
 
 ## 前言
+
+![stars](https://img.shields.io/github/stars/haithing/manual?style=social)
+![watchers](https://img.shields.io/github/watchers/haithing/manual?style=social)
+![latest release](https://img.shields.io/github/v/release/haithing/manual?style=social)
+![file size](https://img.shields.io/github/repo-size/haithing/manual?style=social)
+![license](https://img.shields.io/github/license/haithing/manual?style=social)
 
 本手册供我司在线监测系统服务器运维人员使用。
 
@@ -48,6 +48,7 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 |  v0.2  | 2019/10/15 | 添加 Linux 服务器运维章节   |
 |  v0.3  | 2019/10/16 | 添加 Windows 服务器运维章节 |
 |  v0.4  | 2019/10/18 | 添加常见问题章节            |
+|  v0.5  | 2019/10/21 | 添加系统配置与操作章节      |
 
 ## Linux 服务器运维
 
@@ -311,6 +312,88 @@ _Please strictly follow the configuration process, any of your omissions will le
 [runtime_x86]: http://server.haithing.com/ois/windows/support/runtime_x86.exe '运行库 32 位'
 [runtime_x64]: http://server.haithing.com/ois/windows/support/runtime_x64.exe '运行库 64 位'
 
+## 系统配置与操作
+
+### 系统配置
+
+<div style="display: block; box-sizing: border-box; width: 80px; height: 80px; margin: .2em; padding: 0; border: none; border-radius: 30%; font-size: 2rem; line-height: 80px; text-align: center; color: #265; stroke: currentColor; background: #65e4a5 linear-gradient(135deg, #65e4a5, #44af78); fill: none; box-shadow: .1rem .1rem .2rem black; cursor: pointer;">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-15 -15 110 110">
+    <path d="M10 50H70v5q0 5-5 5H15q-5 0-5-5V15q0-5 5-5H65q5 0 5 5V50M20 70H40V60M60 70H40" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</div>
+
+点击界面右上角 [选项] 按钮，
+在弹出菜单中点击 [系统配置] 按钮，
+输入系统配置密码，
+进入系统配置页面。
+
+各配置项含义如下：
+
+1.  系统名称
+
+    用于配置系统名称，请根据惯例及用户需求进行配置。
+    如：`XX换流站阀厅红外在线监测系统` 、 `XX换流站XX接地站在线监测系统` 。
+
+1.  副标题
+
+    用于配置系统类型。
+    一般为 `客户端` 。
+
+1.  _Logo_
+
+    用于配置 logo 。
+    包括 `国家电网` 、 `寒霜科技` 、 `华中光电` 等选项，请依据项目情况选择。
+
+1.  主题
+
+    用于配置主题。
+    包括 `国网绿` 、 `天空蓝` 等选项，请依据项目情况选择。
+
+1.  管理密码
+
+    用于配置管理密码。
+    管理密码用于系统敏感操作，此密码设置后需牢记并告知用户。
+
+1.  默认视频窗口数
+
+    用于配置系统默认视频窗口数，默认为设备数量的两倍。
+
+1.  看板
+
+    用于配置主界面及视频监测界面左上角看板。
+
+1.  选项
+
+    高级选项包括以下选项，勾选中表示加载其对应的功能。
+
+    -   [x] _分屏工具栏_
+            此选项决定是否显示视频播放页面下方的分屏工具栏。
+
+    -   [x] _轨道车按钮_
+            此选项决定是否显示设备控制区域的轨道车控制按钮，请视是否安装轨道车选择。
+
+    -   [x] _调焦按钮_
+            此选项决定是否显示设备控制区域的焦距调节按钮，请视设备是否支持选择。
+
+1.  模块配置
+
+    此功能用于选择在导航栏列出的模块。
+    双击模块列表项可预览模块，拖动模块列表项可加载或隐藏模块。
+    已选模块列表项右侧的图标按钮用于选择主模块。
+
+配置完成后，点击 [保存] 按钮完成配置。
+如提示提交失败，可能的失败原因如下：
+
+-   没有更改原有的配置。在未进行任何更改的情况下点击提交将会提交失败。
+
+### 在线升级
+
+<div style="display: block; box-sizing: border-box; width: 80px; height: 80px; margin: .2em; padding: 0; border: none; border-radius: 30%; font-size: 2rem; line-height: 80px; text-align: center; color: #265; stroke: currentColor; background: #65e4a5 linear-gradient(135deg, #65e4a5, #44af78); fill: none; box-shadow: .1rem .1rem .2rem black; cursor: pointer;">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-15 -15 110 110">
+    <path d="M30 60H20a16 16 0 1 1 0-32a20 20 0 1 1 40 4a14 14 1 1 1 0 28H50M40 70V30l-12 12l12-12 12 12" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</div>
+
 ## 数据库配置
 
 <img src="files/navicat.png" width="80" />
@@ -373,11 +456,7 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 #### :question: 怎么修改界面标题与 logo 等信息
 
-点击界面右上角 [选项] 按钮，
-在弹出菜单中点击 [系统配置] 按钮，
-输入系统配置密码，
-修改标题、副标题、 logo 等信息，
-点击 [保存] 按钮完成配置。
+请参阅 [系统配置](#系统配置) 。
 
 #### :question: 主界面左上角的设备布局图和现场不一致怎么办
 
