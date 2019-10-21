@@ -61,7 +61,7 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 ### 终端
 
 我们通过 **终端 (Terminal)** 来和装载有 Linux 系统的服务器进行交互。
-在 Linux 系统上可以通过按 **Ctrl+Alt+T** 快捷键打开终端。
+在 Linux 系统上可以通过 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> 快捷键打开终端。
 在 Windows 系统上我们需要额外安装终端软件来远程登录到服务器。
 常见的终端软件有 Xshell 、 Git 、 SecureCRT 、 PuTTY 等。
 
@@ -93,10 +93,10 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 
 #### 自动补全
 
-按 **Tab** 键实现自动补全参数。
+按 <kbd>Tab</kbd> 键实现自动补全参数。
 自动补全不仅能有效提高输入效率，还可以 _避免输入错误_ :100: 。
 
-请参阅以下示例（ `→` 表示 **Tab** 键）练习。
+请参阅以下示例（ `→` 表示 <kbd>Tab</kbd> 键）练习。
 
 ```bash
 cd /var/www/media/log/
@@ -284,13 +284,9 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 1.  配置 _用户账户控制(UAC)_ 为 `从不通知` 。
 
-1.  安装 _支持组件(support.exe)_ 到 **_d:\etc_** 目录。
+1.  安装 [_支持组件(support.exe)_][support] 到 **_d:\etc_** 目录。
 
-    > http://server.haithing.com/ois/windows/support/support.exe
-
-1.  获取 _安装包_ 并解压至 **_d_** 盘任意位置。
-
-    > http://server.haithing.com/ois/windows/
+1.  获取 [_安装包_][setup] 并解压至 **_d_** 盘任意位置。
 
 1.  以 **管理员身份** 运行 **_setup.bat_** 执行安装操作。
 
@@ -304,13 +300,14 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 -   服务程序可部署至任意磁盘分区，但需与支持组件位于同一磁盘分区。
 
--   如安装过程中提示缺少组件，请安装 _运行库_ 后再次尝试。
-
-    > 32 位 http://server.haithing.com/ois/windows/support/runtime_x86.exe
-
-    > 64 位 http://server.haithing.com/ois/windows/support/runtime_x64.exe
+-   如安装过程中提示缺少组件，请安装 [_运行库_][runtime_x64] 后再次尝试。
 
 -   请安装 [常用软件](#常用软件) 。
+
+[support]: http://server.haithing.com/ois/windows/support/support.exe '支持组件(support.exe)'
+[setup]: http://server.haithing.com/ois/windows/ '安装包'
+[runtime_x86]: http://server.haithing.com/ois/windows/support/runtime_x86.exe '运行库 32 位'
+[runtime_x64]: http://server.haithing.com/ois/windows/support/runtime_x64.exe '运行库 64 位'
 
 ## 数据库配置
 
