@@ -304,12 +304,58 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 -   请安装 [常用软件](#常用软件) 。
 
+<!-- 相关链接 -->
+
 [support]: http://server.haithing.com/ois/windows/support/support.exe '支持组件(support.exe)'
 [setup]: http://server.haithing.com/ois/windows/ '安装包'
 [runtime_x86]: http://server.haithing.com/ois/windows/support/runtime_x86.exe '运行库 32 位'
 [runtime_x64]: http://server.haithing.com/ois/windows/support/runtime_x64.exe '运行库 64 位'
 
 ## 数据库配置
+
+<img src="files/navicat.png" width="80" />
+
+推荐采用 [Navicat](#navicat) 管理数据库。
+
+### 设备列表 (table_dev_list)
+
+-   `dev_id` 一般设置为 `设备型号-设备出厂日期-设备序号`，
+    如 `HS-20191001-20` 。
+
+-   `dev_name` 一般设置为 `红外设备+设备序号` 。
+
+-   配置 _寒霜设备_ 时，
+    将 `dev_type` 字段设置为 `haithing` ，
+    `dev_port` 设为 `6080` 。
+
+-   配置 _海康设备_ 时，
+    将 `dev_type` 字段设置为 `hikvision` ，
+    `dev_port` 设为 `8000` 。
+
+-   `login_user` 、 `login_passwd` 根据实际情况配置。
+
+-   `ir_url` 、 `vl_url` 为视频 _rtsp_ 地址。
+    配置 `ir_url` 字段将启用播放红外视频。
+    配置 `vl_url` 字段将启用播放可见光视频。
+    没有对应视频时，字段须设置为空(在 Navicat 中找到对应字段，点右键，选择 `"设置为 NULL"` )。
+
+    常用的 _rtsp_ 地址：
+
+    -   我司设备红外视频地址：
+        `rtsp://{ip}:8556/h264`
+    -   我司设备可见光视频（模拟）地址：
+        `rtsp://{ip}:8557/h264`
+    -   海康设备主码流地址：
+        `rtsp://{ip}:554/h264/ch1/main/av_stream`
+    -   海康设备子码流地址：
+        `rtsp://{ip}:554/h264/ch1/sub/av_stream`
+
+-   ~~`window1` 与 `window2` 两字段分别用于指定 `ir_url` 与 `vl_url` 的播放窗口。~~
+    此配置在 **_v6.2_** 中已废弃。
+
+-   客户端主界面及视频界面不列出 `plc_timer` 为 `0` 的设备。
+
+-   电源计划、高温告警、测温记录及温度曲线等模块中仅列出 `dev_type` 为 `haithing` 的设备。
 
 ## 常见问题 (FAQ)
 
