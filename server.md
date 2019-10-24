@@ -30,7 +30,7 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 
 ### 反馈建议 ![issues](https://img.shields.io/github/issues/haithing/manual)
 
--   如果你在本手册中发现了错误或者存在可以改善的地方，请贡献你的一份力量。
+-   如果在本手册中发现了错误或者存在可以改善的地方，请贡献你的一份力量。
 
 -   :link: https://github.com/haithing/manual/issues
 
@@ -64,7 +64,7 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 我们通过 **终端 (Terminal)** 来和装载有 Linux 系统的服务器进行交互。
 在 Linux 系统上可以通过 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> 快捷键打开终端。
 在 Windows 系统上我们需要额外安装终端软件来远程登录到服务器。
-常见的终端软件有 Xshell 、 Git 、 SecureCRT 、 PuTTY 等。
+常见的终端软件有 Xshell 、 Git 、 Termius 、 SecureCRT 、 PuTTY 等。
 
 **_Xshell_**
 
@@ -511,6 +511,10 @@ _Please strictly follow the configuration process, any of your omissions will le
 #### _Visual Studio Code_
 
 > https://code.visualstudio.com/download
+
+#### _Termius_
+
+> https://www.termius.com/download
 
 **_以下软件仅支持在公司内网下载。_**
 
