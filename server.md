@@ -61,7 +61,7 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 
 ### 终端
 
-我们通过 **终端 (Terminal)** 来和装载有 Linux 系统的服务器进行交互。
+我们通过 **终端（Terminal）** 来和装载有 Linux 系统的服务器进行交互。
 在 Linux 系统上可以通过 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> 快捷键打开终端。
 在 Windows 系统上我们需要额外安装终端软件来远程登录到服务器。
 常见的终端软件有 Xshell 、 Git 、 Termius 、 SecureCRT 、 PuTTY 等。
@@ -81,6 +81,8 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 <img src="files/git.png" width="80" />
 
 -   请在 [附录 - 常用软件](#git) 获取下载链接。
+
+-   Git for Windows 使用 GPL 开源协议，我们可以免费使用。
 
 -   Git for Windows 的功能十分强大，我们仅使用其中一小部分功能。
 
@@ -127,7 +129,7 @@ his→
 
 -   可以打开多个 **终端** 来进行不同的操作。
 
--   使用 `history` 命令查看历史记录，输入 `!n`（`n` 是命令编号）就可以再次执行。
+-   使用 `history` 命令查看历史记录，输入 `!n` （ `n` 是命令编号）就可以再次执行。
 
 -   使用 `sudo reboot` 命令重启服务器。
 
@@ -135,9 +137,12 @@ his→
 
 > 请勿在 xshell 中保存服务器密码。
 
-打开 **终端** ，输入命令 `ssh 用户名@服务器`（如 `ssh hs@192.168.8.2`），回车，输入密码，出现 `Welcome to XXX` 信息即已成功连接服务器。
+打开 **终端** 。
+输入命令 `ssh 用户名@服务器` ， 如 `ssh hs@192.168.8.2` 。
+输入正确的密码，出现 `Welcome to XXX` 信息即已成功连接到服务器。
 
--   服务器 ip 地址与客户端网页地址一致，阀厅项目通常为 `192.168.8.2` 。
+-   服务器 ip 地址与客户端网页地址一致，
+    阀厅项目通常为 `192.168.8.2` 。
 
 -   用户名通常为 `hs` 。
 
@@ -147,13 +152,18 @@ his→
 
 -   目录层级用 `/` 分隔。
 
--   用 `cd` 命令切换工作路径，输入 `cd ~` 可以进入 home 目录。要访问你的 home 目录中的文件，可以使用前缀 `~`（例如 `~/server`）。输入 `cd -` 回到前一个工作路径。
+-   用 `cd` 命令切换工作路径。
+    直接输入 `cd` 进入当前用户的家目录。
+    输入 `cd -` 回到前一个工作路径。
 
 -   用 `pwd` 命令查看当前目录。
 
--   绝对路径从根目录（`/`）开始，如 `/var/www/html` 。
+-   绝对路径从根目录（ `/` ）开始，如 `/var/www/html` 。
+    `~` 表示当前用户的家目录，如 `~/server` 。
 
--   相对路径从当前目录开始，`.` 表示当前目录， `..` 表示当前目录的上层目录。
+-   相对路径从当前目录开始。
+    `.` 表示当前目录。
+    `..` 表示当前目录的上层目录。
 
 ```bash
 $ cd /var/www/html && pwd
@@ -283,9 +293,9 @@ _Please strictly follow the configuration process, any of your omissions will le
 
     > _以 **管理员身份** 运行命令 `net user administrator /active:yes`_ 。
 
-1.  配置 _用户账户控制(UAC)_ 为 `从不通知` 。
+1.  配置 _用户账户控制（UAC）_ 为 `从不通知` 。
 
-1.  安装 [_支持组件(support.exe)_][support] 到 **_d:\etc_** 目录。
+1.  安装 [_支持组件（support.exe）_][support] 到 **_d:\etc_** 目录。
 
 1.  获取 [_安装包_][setup] 并解压至 **_d_** 盘任意位置。
 
@@ -307,7 +317,7 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 <!-- 相关链接 -->
 
-[support]: http://server.haithing.com/ois/windows/support/support.exe '支持组件(support.exe)'
+[support]: http://server.haithing.com/ois/windows/support/support.exe '支持组件'
 [setup]: http://server.haithing.com/ois/windows/ '安装包'
 [runtime_x86]: http://server.haithing.com/ois/windows/support/runtime_x86.exe '运行库 32 位'
 [runtime_x64]: http://server.haithing.com/ois/windows/support/runtime_x64.exe '运行库 64 位'
@@ -420,7 +430,7 @@ _Please strictly follow the configuration process, any of your omissions will le
 -   `ir_url` 、 `vl_url` 为视频 _rtsp_ 地址。
     配置 `ir_url` 字段将启用播放红外视频。
     配置 `vl_url` 字段将启用播放可见光视频。
-    没有对应视频时，字段须设置为空(在 Navicat 中找到对应字段，点右键，选择 `"设置为 NULL"` )。
+    没有对应视频时，字段须设置为空（在 Navicat 中找到对应字段，点右键，选择 `"设置为 NULL"` ）。
 
     常用的 _rtsp_ 地址：
 
@@ -461,8 +471,8 @@ _Please strictly follow the configuration process, any of your omissions will le
 #### :question: 主界面左上角的设备布局图和现场不一致怎么办
 
 点击 **设备布局** 界面右下角 [编辑模式] 按钮，
-输入管理密码，
-在弹出菜单中选择预设的布局方案。
+输入管理密码，进入编辑模式。
+在左下角弹出菜单中选择预设的布局方案。
 如没有和现场一致的布局方案可手动拖动设备图标调整位置，
 在设备图标上单击可调整设备角度。
 改动实时生效。
