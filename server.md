@@ -82,11 +82,25 @@ _简洁_（避免冗余的内容，或是可以在其他地方轻松查到的细
 
 -   请在 [附录 - 常用软件](#git) 获取下载链接。
 
--   Git for Windows 使用 GPL 开源协议，我们可以免费使用。
+-   Git for Windows 使用
+    [GPL](https://github.com/git-for-windows/git)
+    开源协议，我们可以免费使用。
 
 -   Git for Windows 的功能十分强大，我们仅使用其中一小部分功能。
 
 -   安装后在桌面点右键，选择 `Git Bash Here` 打开软件。
+
+**_Termius_**
+
+<img src="files/termius.png" width="80" />
+
+-   请在 [附录 - 常用软件](#termius) 获取下载链接。
+
+-   Termius 支持 Windows 、 Linux 以及 macOS 等平台，也支持在 Android 和 iOS 上使用。
+
+-   Termius 的免费功能已足够我们的使用。
+
+-   安装后通过桌面快捷方式打开软件。
 
 下文中 **终端** 泛指上述软件中的任意一个。
 
