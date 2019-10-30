@@ -19,11 +19,12 @@ Docker 在 LXC 的基础上 Docker 进行了进一步的封装，让用户不需
 ```bash
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-apt-add-repository -y -u "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-apt-get -y install docker-ce
+
+sudo apt-add-repository -y -u "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get -y install docker-ce
 ```
 
-## 应用
+## 实例
 
 基于 Ubuntu 16.04 创建镜像并部署在线监测系统。
 
@@ -94,3 +95,35 @@ apt-get -y install docker-ce
 1.  删除容器。
 
     `sudo docker rm {CONTAINER_ID}`
+
+## _Nvidia-Docker_
+
+### 安装
+
+```bash
+# https://github.com/NVIDIA/nvidia-docker
+distribution=$(. /etc/os-release; echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+```
+
+### 使用
+
+```bash
+# Test nvidia-smi with the latest official CUDA image
+sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+# Start a GPU enabled container on two GPUs
+sudo docker run --gpus 2 nvidia/cuda:9.0-base nvidia-smi
+
+# Starting a GPU enabled container on specific GPUs
+sudo docker run --gpus '"device=1,2"' nvidia/cuda:9.0-base nvidia-smi
+sudo docker run --gpus '"device=UUID-ABCDEF,1"' nvidia/cuda:9.0-base nvidia-smi
+
+# Specifying a capability (graphics, compute, ...) for my container
+# Note this is rarely if ever used this way
+sudo docker run --gpus all,capabilities=utility nvidia/cuda:9.0-base nvidia-smi
+```
