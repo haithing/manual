@@ -424,7 +424,7 @@ _Please strictly follow the configuration process, any of your omissions will le
 
 推荐采用 [Navicat](#navicat) 管理数据库。
 
-### 设备列表 (table_dev_list)
+### 设备列表 (_table_dev_list_) 配置
 
 -   `dev_id` 一般设置为 `设备型号-设备出厂日期-设备序号`，
     如 `HS-20191001-20` 。
@@ -450,9 +450,9 @@ _Please strictly follow the configuration process, any of your omissions will le
 
     常用的 _rtsp_ 地址：
 
-    -   我司设备红外视频地址：
+    -   寒霜设备红外视频地址：
         `rtsp://{ip}:8556/h264`
-    -   我司设备可见光视频（模拟）地址：
+    -   寒霜设备可见光视频（模拟）地址：
         `rtsp://{ip}:8557/h264`
     -   海康设备主码流地址：
         `rtsp://{ip}:554/h264/ch1/main/av_stream`
@@ -463,7 +463,7 @@ _Please strictly follow the configuration process, any of your omissions will le
     值从 `0` 开始递增。
 
 -   `room_id` 为设备所处房间（阀厅）。
-    具体值请查阅　`table_room_list` 。
+    具体值请查阅表 `table_room_list` 。
 
 -   ~~`window1` 与 `window2` 两字段分别用于指定 `ir_url` 与 `vl_url` 的播放窗口。~~
     此配置在 **_v6.2.0_** 后已废弃。
@@ -473,6 +473,62 @@ _Please strictly follow the configuration process, any of your omissions will le
     在客户端主界面及视频界面不列出。
 
 -   其余字段无需配置。
+
+### 变量列表 (_table_var_list_) 配置
+
+#### 通用部分
+
+| 字段名称   | 字段含义 | 备注                                                   |
+| ---------- | -------- | ------------------------------------------------------ |
+| type_id    | 变量类型 | 查阅表 `table_var_type` 获取。                         |
+| var_id     | 变量标识 | 变量唯一标识号。                                       |
+| var_name   | 变量名称 | 支持上下标，如 SF<sub>6</sub> 为 `SF<sub>6</sub>` 。   |
+| var_unit   | 变量单位 | 支持上下标，如 m<sup>2</sup> 为 `m<sup>2</sup>` 。     |
+| var_scale  | 系数值   | `value = sample / var_scale + var_offset` 。           |
+| var_offset | 偏移值   | 同上。                                                 |
+| var_min    | 最小值   | 当 `value < var_min` 或 `value > var_max` 时触发告警。 |
+| var_max    | 最大值   | 同上。                                                 |
+| usable     | 可用状态 |                                                        |
+
+#### 数字量输入 (_DI_) 配置
+
+| 字段名称 | 字段含义   | 备注                           |
+| -------- | ---------- | ------------------------------ |
+| box_id   | 采集器编号 | 查阅表 `table_box_list` 获取。 |
+| box_port | 端口号     | 一般为 `1` 到 `32` 。          |
+
+-   界面上分别用红色和绿色标识数字量的开 (`1`) 闭 (`0`) 状态。
+-   数字量输入告警配置：
+    -   数字量开闭状态不等同于告警状态。
+    -   如需配置数字量为开 (`1`) 时告警，配置 `var_min` 与 `var_max` 为 `0` 。
+    -   如需配置数字量为闭 (`0`) 时告警，配置 `var_min` 与 `var_max` 为 `1` 。
+-   如需对采样值取反，可配置 `var_scale` 为 `-1` , `var_offset` 为 `1` 。
+
+#### 数字量输出 (_DO_) 配置
+
+| 字段名称 | 字段含义     | 备注                           |
+| -------- | ------------ | ------------------------------ |
+| box_id   | 采集器编号   | 查阅表 `table_box_list` 获取。 |
+| box_port | 端口号       | 一般为 `1` 到 `32` 。          |
+| dev_id   | 关联设备编号 | 需关联红外设备时填写设备编号。 |
+
+#### 模拟量输入 (_AI_) 配置
+
+| 字段名称                 | 字段含义   | 备注                               |
+| ------------------------ | ---------- | ---------------------------------- |
+| box_id                   | 采集器编号 | 查阅表 `table_box_list` 获取。     |
+| box_port                 | 端口号     | 一般为 `1` 到 `8` 。               |
+| hall_range_begin         | 量程起始值 |                                    |
+| hall_range_end           | 量程结束值 |                                    |
+| hall_zero                | 零漂值     |                                    |
+| box_port_reserve         | 端口号     | 装有小量程霍尔传感器时配置。下同。 |
+| hall_range_begin_reserve | 量程起始值 |                                    |
+| hall_range_end_reserve   | 量程结束值 |                                    |
+| hall_zero_reserve        | 零漂值     |                                    |
+
+-   如量程为 `0 - 500A` 的霍尔传感器，配置 `hall_range_begin` 为 `0` , `hall_range_end` 为 `500` 。
+-   如量程为 `±200A` 的霍尔传感器，配置 `hall_range_begin` 为 `-200` , `hall_range_end` 为 `200` 。
+-   反向安装霍尔传感器时，调换 `hall_range_begin` 与 `hall_range_end` 。
 
 ## 常见问题 (FAQ)
 
